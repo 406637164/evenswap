@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 5px;
+      }
+      .section__selection {
+        display: flex;
+
+        justify-content: space-around;
+        left: -5px;
+        width: 100%;
+      }
+      .section__selection li {
+        margin: 5px;
+      }
+
+      .section__selection li a {
+        text-decoration: none;
+        color: black;
+      }
+      .title {
+        text-align: center;
+        height: 10%;
+      }
+      .decition_matrix {
+        gap: 5px;
+        text-align: center;
+
+        font-size: 25px;
+        box-shadow: 1px 1px 7px gray;
+      }
+      button {
+        border-top: 5px;
+        text-align: center;
+        width: 100px;
+      }
+
+      .list-group > a,
+      .list-group .list-group-item .active {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 200px;
+
+        margin-top: 0;
+        box-shadow: 1px 1px 9px gray;
+      }
+
+      .contain table {
+        font-size: 35px;
+        align-items: center;
+        width: 1800px;
+        display: flex;
+        text-align: center;
+      }
+      .tableclick {
+        background-color: rgba(0, 0, 0, 0.075);
+      }
+      a {
+        width: 200px;
+      }
+      .decition_matrix .list-group {
+        gap: 5px;
+        width: 100px;
+        margin-left: 5px;
+        flex-direction: row;
+      }
+
+      .contain {
+        display: flex;
+      }
+      .decition_matrix .title {
+        display: colomn;
+        align-content: center;
+        justify-content: center;
+      }
+      .list {
+        box-shadow: 1px 1px 9px gray;
+       margin-top: 15px ;
+        width: 20vw;
+        height: 80%;
+      }
+      .list > h2 {
+
+        text-align: center;
+      }
+      svg text {
+        font: 20px sans-serif;
+        text-anchor: center;
+      }
+      table td {
+        width: 450px;
+      }
+      #produce {
+        display: none;
+      }
+      #my_dataviz {
+        width: 1600px;
+        height: 750px;
+      }
+      svg{
+        box-shadow: 1px 1px 9px gray;
+      }
+      .colorcircle{
+        position: absolute;
+      }
+      .colorcircle:hover {
+        opacity: 0.5;
+      
+        z-index: 5;
+      }
+      .unrects{
+        fill: lightyellow;
+        opacity: 0.4;
+      }
+      .rects {
+        fill: lightyellow;
+        opacity: 0.4;
+      stroke: red ;
+      }
+   
+     .tooltexts{
+      writing-mode:vertical-lr
+     }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main class="contain">
+      <table class="table table-hover">
+        <tr>
+          <td></td>
+          <td>九寮溪生態園區</td>
+          <td>台灣碗盤博物館</td>
+          <td>綺麗觀光園區</td>
+        </tr>
+        <tr>
+          <th>開放時間</th>
+          <td>90</td>
+          <td>80</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <th>服務設施</th>
+          <td>90</td>
+          <td>80</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <th>人氣</th>
+          <td>2140</td>
+          <td>5051</td>
+          <td>6998</td>
+        </tr>
+        <tr>
+          <th>旅遊品質</th>
+          <td>60</td>
+          <td>70</td>
+          <td>50</td>
+        </tr>
+      </table>
+    </main>
+
+    <section style="display: flex">
+      <div class="list">
+        <h2>決策清單</h2>
+        <div class="decition_matrix">
+          <div class="title"></div>
+
+          <div class="list-group">
+            <a
+              href="#"
+              class="list-group-item list-group-item-action active"
+              aria-current="true"
+            >
+              開放時間
+            </a>
+            <a href="#" class="list-group-item list-group-item-action active"
+              >服務設施</a
+            >
+            <a href="#" class="list-group-item list-group-item-action active"
+              >旅遊品質</a
+            >
+            <a href="#" class="list-group-item list-group-item-action">門票</a>
+            <a href="#" class="list-group-item list-group-item-action active"
+              >人氣</a
+            >
+
+            <!-- <button type="button" class="btn btn-outline-primary">新增選項</button> -->
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-outline-primary">
+            新增選項
+          </button>
+          <!-- <button type="button" class="btn btn-outline-primary" id="produce">
+            產生方案
+          </button> -->
+        </div>
+      </div>
+      <div>
+    
+   
+      <div id="my_dataviz">
+      
+      </div>
+    </section>
+
+    <footer></footer>
+  </body>
+  <script src="  https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://d3js.org/d3.v6.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</html>
